@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:globeapp/screens/home.dart';
 import 'package:globeapp/screens/settings.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SettingScreen(),
+      home: HomeScreen(),
     );
   }
 }
