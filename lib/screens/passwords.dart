@@ -46,10 +46,9 @@ class _PasswordsScreen extends State<PasswordsScreen> {
         backgroundColor: Color(settingColor),
       ),
       body: FutureBuilder(
-        //é un widget che aggiuorna il suo contenuto dopo una Future
+        //é un widget che aggiorna il suo contenuto dopo una Future
         future: getPasswords(),
-        builder: (context, snapshot) {
-          //Ridisegno pagina dopo Future
+        builder: (context, snapshot) { //Ridisegno pagina dopo Future
           List<Password> passwords = snapshot.data ?? [];
           return ListView.builder(
               itemCount: passwords == null ? 0 : passwords.length,

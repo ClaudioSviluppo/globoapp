@@ -19,6 +19,7 @@ class _PasswordDetailDialogState extends State<PasswordDetailDialog> {
   final TextEditingController txtName = TextEditingController();
   final TextEditingController txtPassword = TextEditingController();
   bool hidePassword = true;
+  dynamic db;
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +59,12 @@ class _PasswordDetailDialogState extends State<PasswordDetailDialog> {
           onPressed: () {
             widget.password.name = txtName.text;
             widget.password.password = txtPassword.text;
-            dynamic db;
             if (kIsWeb) {
               //Running on the web
-              db = SembastDBWeb();
+              SembastDBWeb db = SembastDBWeb();
             } else {
               //Running on device
-              db = SembastDB();
+              SembastDB  db= SembastDB();
             }
             (widget.isNew)
                 ? db.addPassword(widget.password)
